@@ -1,0 +1,5 @@
+*.o
+dumb
+.DS_Store
+._*
+*.dSYM
