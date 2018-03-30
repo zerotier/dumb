@@ -1,4 +1,6 @@
 /* DUMB: Dumb User Mode Bridge */
+/* (c)2018 ZeroTier, Inc. */
+/* MIT license */
 
 #ifndef _BSD_SOURCE
 #define _BSD_SOURCE
@@ -11,7 +13,6 @@
 #include <pthread.h>
 #include <sys/socket.h>
 #include <sys/types.h>
-#include <unistd.h>
 #include <pcap/pcap.h>
 
 static struct {
