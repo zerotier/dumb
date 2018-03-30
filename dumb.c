@@ -1,9 +1,17 @@
+/* DUMB: Dumb User Mode Bridge */
+
+#ifndef _BSD_SOURCE
+#define _BSD_SOURCE
+#endif
+
 #include <stdio.h>
 #include <stdint.h>
 #include <stdlib.h>
 #include <string.h>
 #include <pthread.h>
-
+#include <sys/socket.h>
+#include <sys/types.h>
+#include <unistd.h>
 #include <pcap/pcap.h>
 
 static struct {
@@ -14,10 +22,8 @@ static struct {
 static void ph(unsigned char *ifp,const struct pcap_pkthdr *hdr,const unsigned char *data)
 {
 	unsigned int i = (unsigned int)((uintptr_t)ifp);
-	if ((hdr)&&(data)) {
+	if ((hdr)&&(data))
 		pcap_inject(ifs.interfaces[i ^ 1],data,hdr->len);
-		printf("%u\n",hdr->len);
-	}
 }
 
 static void *thr(void *ifp)
