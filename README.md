@@ -1,7 +1,7 @@
 DUMB: Dumb User Mode Bridge
 ======
 
-DUMB is a tiny utility that uses libpcap capture and inject to bridge two Ethernet interfaces. In other words it just copies packets back and forth.
+DUMB is a tiny utility that uses libpcap capture and inject to bridge two Ethernet interfaces. All it does is copy packets back and forth.
 
 To build just type `make`. You will need libpcap development headers installed on Linux. These ship by default on MacOS (assuming you have XCode tools installed). Usage is just `sudo dumb <interface0> <interface1>`.
 
